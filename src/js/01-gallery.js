@@ -43,9 +43,16 @@ function onGalleryItem(evt) {
       return;
    }
 
-   const originalUrl = clickElement.dataset.source;
-   
-   console.log(originalUrl);
+  const originalUrl = clickElement.dataset.source;
+  
+  const modal = basicLightbox.create(`
+    <div class="modal">
+      <img src="${originalUrl}" alt="">
+    </div>
+  `);
 
-   basicLightbox.create(`<img src="${originalUrl}" alt="">`).show();
+  const img = modal.element().querySelector('img');
+  img.src = originalUrl;
+
+  modal.show();
 }
