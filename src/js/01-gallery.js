@@ -14,7 +14,7 @@ function createGalleryImages (galleryItems) {
          <li class="gallery__item">
         <a
           class="gallery__link"
-          href="${original}"
+          href="#"
         >
           <img
             class="gallery__image"
@@ -29,6 +29,22 @@ function createGalleryImages (galleryItems) {
    .join('');
 }
 
-console.log(createGalleryImages (galleryItems));
+// console.log(createGalleryImages(galleryItems));
 
+galleryList.addEventListener('click', onGalleryItem);
 
+function onGalleryItem(evt) {
+   evt.preventDefault();
+   
+   const clickElement = event.target;
+   const isImage = clickElement.tagName === 'IMG';
+
+   if (!isImage) {
+      return;
+   }
+
+   const originalUrl = clickElement.dataset.source;
+   console.log(originalUrl);
+
+   basicLightbox.create(`<img src="${originalUrl}" alt="">`).show();
+}
