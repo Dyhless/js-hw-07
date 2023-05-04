@@ -44,6 +44,7 @@ function onGalleryItem(evt) {
    }
 
    const originalUrl = clickElement.dataset.source;
+   
    console.log(originalUrl);
 
    basicLightbox.create(`<img src="${originalUrl}" alt="">`).show();
