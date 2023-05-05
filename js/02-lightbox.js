@@ -1,5 +1,5 @@
 import { galleryItems } from './gallery-items.js';
-// import SimpleLightbox from '../simplelightbox';
+// import SimpleLightbox from '../simplelightbox';  ?????
 
 const galleryList = document.querySelector('.gallery');
 const imageItem = createGalleryImages(galleryItems);
