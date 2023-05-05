@@ -55,6 +55,5 @@ function onGalleryItem(evt) {
   img.src = originalUrl;
 
    modal.show();
-   
    console.log(originalUrl);
 }
