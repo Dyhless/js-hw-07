@@ -5,9 +5,7 @@ import { galleryItems } from './gallery-items.js';
 const galleryList = document.querySelector('.gallery');
 const imageItem = createGalleryImages(galleryItems);
 
-galleryList.insertAdjacentHTML('beforeend', imageItem);
-
-
+//Создание и рендер разметки по массиву данных galleryItems
 function createGalleryImages (galleryItems) {
    return galleryItems.map( ({ preview, original, description }) => {
       return `
@@ -29,7 +27,8 @@ function createGalleryImages (galleryItems) {
    .join('');
 }
 
-// console.log(createGalleryImages(galleryItems));
+// Элементы галереи созданы и добавлены в ul.gallery
+galleryList.insertAdjacentHTML('beforeend', imageItem);
 
 galleryList.addEventListener('click', onGalleryItem);
 
@@ -57,6 +56,7 @@ function onGalleryItem(evt) {
    modal.show();
   console.log(originalUrl);
   
+// Добавляем слушатель на закрытие модалки на esc кнопку
   document.addEventListener('keydown', onModalKeyDown);
 
   function onModalKeyDown(evt) {
@@ -69,6 +69,6 @@ function onGalleryItem(evt) {
   }
 }
 
-// Добавляем слушатель на закрытие модалки на esc кнопку
+
 
 
