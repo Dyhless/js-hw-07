@@ -55,5 +55,20 @@ function onGalleryItem(evt) {
   img.src = originalUrl;
 
    modal.show();
-   console.log(originalUrl);
+  console.log(originalUrl);
+  
+  document.addEventListener('keydown', onModalKeyDown);
+
+  function onModalKeyDown(evt) {
+    if (evt.code === 'Escape') {
+      modal.close();
+
+      // удаляем слушатель после того как модалка закрыватся
+      document.removeEventListener('keydown', onModalKeyDown);
+    }
+  }
 }
+
+// Добавляем слушатель на закрытие модалки на esc кнопку
+
+
