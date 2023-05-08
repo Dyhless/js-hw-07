@@ -31,6 +31,7 @@ galleryList.insertAdjacentHTML('beforeend', imageItem);
 
 // Инициализируем SimpleLightbox с настройками
 new SimpleLightbox('.gallery__link', {
+//   sourceAttr: href,
   captions: true,
   captionsData: 'alt',
   captionDelay: 250,

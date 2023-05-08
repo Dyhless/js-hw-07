@@ -47,7 +47,12 @@ function onGalleryItem(evt) {
       <div class="modal">
          <img src="${originalUrl}" alt="">
       </div>
-   `);
+   `,
+     {
+       onShow: instance => {}, 
+       onClose: instance => {},
+     }
+   );
 
    // Получаем ссылку на изображение внутри модального окна
    const img = modal.element().querySelector('img');
