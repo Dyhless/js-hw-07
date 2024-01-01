@@ -1,14 +1,17 @@
 import { galleryItems } from './gallery-items.js';
 
-const galleryList = document.querySelector('.gallery'); // Находим элемент списка галереи
-const imageItem = createGalleryImages(galleryItems); // Создаём HTML код элементов галереи
-
-const images = galleryList.querySelectorAll('.gallery__image'); // Находим все элементы изображений
-
+// Находим элемент списка галереи
+const galleryList = document.querySelector('.gallery'); 
+// Создаём HTML код элементов галереи
+const imageItem = createGalleryImages(galleryItems); 
+// Находим все элементы изображений
+const images = galleryList.querySelectorAll('.gallery__image'); 
 // Проходим по каждому элементу изображения и добавляем атрибут для использования SimpleLightbox
 images.forEach((image) => {
-  const link = image.parentNode; // Находим родительский элемент ссылки
-  link.setAttribute('data-lightbox', ''); // Добавляем атрибут data-lightbox
+  // Находим родительский элемент ссылки
+  const link = image.parentNode; 
+  // Добавляем атрибут data-lightbox
+  link.setAttribute('data-lightbox', ''); 
 });
 
 // Создаём HTML код элементов галереи
